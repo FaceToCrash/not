@@ -1,5 +1,5 @@
 {
-  "id": "com.aistudio.akillinot",
+  "id": "/",
   "name": "Akıllı Not - AI Destekli Not Defteri",
   "short_name": "Akıllı Not",
   "description": "AI destekli akıllı not defteri, sesli not kaydı ve kişisel asistan uygulaması",
@@ -13,23 +13,30 @@
   "theme_color": "#0F172A",
   "background_color": "#090D16",
   "categories": ["productivity", "utilities"],
+  "iarc_rating_id": "e0000000-0000-0000-0000-000000000000",
   "prefer_related_applications": false,
-  "related_applications": [],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.aistudio.akillinot",
+      "id": "com.aistudio.akillinot"
+    }
+  ],
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icon-512.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icon-512-maskable.png",
+      "src": "/icon-512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -37,14 +44,14 @@
   ],
   "screenshots": [
     {
-      "src": "screenshot-mobile.png",
+      "src": "/screenshot-mobile.png",
       "sizes": "1080x1920",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Akıllı Not Mobil Uygulama Ekranı"
     },
     {
-      "src": "screenshot-desktop.png",
+      "src": "/screenshot-desktop.png",
       "sizes": "1920x1080",
       "type": "image/png",
       "form_factor": "wide",
@@ -59,7 +66,7 @@
       "url": "/?action=new_note",
       "icons": [
         {
-          "src": "icon-192.png",
+          "src": "/icon-192.png",
           "sizes": "192x192",
           "type": "image/png"
         }
