@@ -45,14 +45,14 @@
   "screenshots": [
     {
       "src": "screenshot-mobile.png",
-      "sizes": "1080x1920",
+      "sizes": "540x960",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Akıllı Not Mobil Uygulama Ekranı"
     },
     {
       "src": "screenshot-desktop.png",
-      "sizes": "1920x1080",
+      "sizes": "960x540",
       "type": "image/png",
       "form_factor": "wide",
       "label": "Akıllı Not Masaüstü Görünümü"
