@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akıllı Not - AI Destekli Not Defteri</title>
+  <meta name="description" content="AI destekli akıllı not defteri, sesli not kaydı ve kişisel asistan uygulaması" />
+  <meta name="theme-color" content="#0F172A" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background-color: #090D16;
+      color: #E2E8F0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    header {
+      width: 100%;
+      max-width: 800px;
+      padding: 24px;
+      background: #0F172A;
+      border: 1px solid #1E293B;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(0, 240, 255, 0.1);
+      color: #00F0FF;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      border: 1px solid rgba(0, 240, 255, 0.2);
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #F8FAFC;
+      margin-bottom: 8px;
+    }
+    p.subtitle {
+      color: #94A3B8;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .container {
+      width: 100%;
+      max-width: 800px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: #0F172A;
+      border: 1px solid #1E293B;
+      padding: 20px;
+      border-radius: 14px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      border-color: #00F0FF;
+      transform: translateY(-2px);
+    }
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #F1F5F9;
+      margin-bottom: 6px;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: #94A3B8;
+      line-height: 1.4;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #00F0FF, #0072FF);
+      color: #090D16;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+    }
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      color: #64748B;
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="badge">✨ AI Destekli Asistan</span>
+    <h1>Akıllı Not Defteri</h1>
+    <p class="subtitle">Sesli not alma, otomatik AI özetleme, PIN kilitli gelişmiş güvenlik ve otomatik ilişkilendirme desteği.</p>
+
+    <div class="actions">
+      <button class="btn btn-primary" onclick="alert('PWA veya Android Uygulaması Olarak Çalışıyor!')">📱 Uygulamayı Kullan</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-icon">🎙️</div>
+      <div class="card-title">Sesli Not Kaydı</div>
+      <div class="card-desc">Konuşarak anında not oluşturun, AI ses kayıtlarınızı düzenlesin.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🧠</div>
+      <div class="card-title">AI Özet & Analiz</div>
+      <div class="card-desc">Notlarınız otomatik analiz edilir, başlıklar ve etiketler üretilir.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🛡️</div>
+      <div class="card-title">256-Bit Güvenlik</div>
+      <div class="card-desc">PIN korumalı güvenlik duvarı ve detaylı ihlal raporlaması.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔗</div>
+      <div class="card-title">Akıllı İlişki Ağı</div>
+      <div class="card-desc">İlgili notlar otomatik olarak birbirine bağlanır.</div>
+    </div>
+  </div>
+
+  <footer>
+    Akıllı Not &copy; 2026 - PWA & Android Application | AI Studio Build
+  </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(err => {
+          console.log('SW registration failed:', err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
