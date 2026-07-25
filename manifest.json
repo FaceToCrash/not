@@ -1,12 +1,12 @@
 {
-  "id": "com.aistudio.akillinot",
+  "id": "/",
   "name": "Akıllı Not - AI Destekli Not Defteri",
   "short_name": "Akıllı Not",
   "description": "AI destekli akıllı not defteri, sesli not kaydı ve kişisel asistan uygulaması",
   "lang": "tr",
   "dir": "ltr",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "display_override": ["standalone", "minimal-ui"],
   "orientation": "portrait",
@@ -15,13 +15,7 @@
   "categories": ["productivity", "utilities"],
   "iarc_rating_id": "e0000000-0000-0000-0000-000000000000",
   "prefer_related_applications": false,
-  "related_applications": [
-    {
-      "platform": "play",
-      "url": "https://play.google.com/store/apps/details?id=com.aistudio.akillinot",
-      "id": "com.aistudio.akillinot"
-    }
-  ],
+  "related_applications": [],
   "icons": [
     {
       "src": "icon-192.png",
@@ -63,7 +57,7 @@
       "name": "Yeni Not Ekle",
       "short_name": "Yeni Not",
       "description": "Hızlıca yeni bir not oluştur",
-      "url": "./?action=new_note",
+      "url": "/?action=new_note",
       "icons": [
         {
           "src": "icon-192.png",
