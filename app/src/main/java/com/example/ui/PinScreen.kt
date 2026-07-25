@@ -63,6 +63,8 @@ import com.example.ui.theme.TextMuted
 import com.example.ui.theme.TextPrimary
 import com.example.ui.theme.TextSecondary
 
+import com.example.ui.components.StyledUserIconBadge
+
 @Composable
 fun PinScreen(
     onPinSuccess: () -> Unit,
@@ -143,33 +145,8 @@ fun PinScreen(
             verticalArrangement = Arrangement.Center,
             modifier = Modifier.fillMaxWidth()
         ) {
-            // App Header Icon
-            Box(
-                modifier = Modifier
-                    .size(80.dp)
-                    .clip(CircleShape)
-                    .background(
-                        Brush.linearGradient(
-                            colors = listOf(PrimaryPurple, SecondaryCyan)
-                        )
-                    )
-                    .padding(2.dp)
-            ) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .clip(CircleShape)
-                        .background(DarkSurface),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Psychology,
-                        contentDescription = "Lock Icon",
-                        tint = PrimaryPurpleLight,
-                        modifier = Modifier.size(44.dp)
-                    )
-                }
-            }
+            // App Header 3D User Style Icon
+            StyledUserIconBadge(size = 80.dp, shapeRadius = 22.dp)
 
             Spacer(modifier = Modifier.height(20.dp))
 

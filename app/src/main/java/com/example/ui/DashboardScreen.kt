@@ -75,6 +75,9 @@ import com.example.ui.theme.TextMuted
 import com.example.ui.theme.TextPrimary
 import com.example.ui.theme.TextSecondary
 
+import com.example.ui.components.StyledIconTile
+import com.example.ui.components.StyledUserIconBadge
+
 private val PaletteColors = listOf(
     PrimaryPurple,
     SecondaryCyan,
@@ -99,20 +102,27 @@ fun DashboardScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Text(
-                        text = "İstatistik & Analiz Dashboard",
-                        style = MaterialTheme.typography.titleMedium.copy(
-                            fontWeight = FontWeight.Bold,
-                            color = TextPrimary
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        StyledUserIconBadge(size = 32.dp, shapeRadius = 8.dp)
+                        Spacer(modifier = Modifier.width(10.dp))
+                        Text(
+                            text = "İstatistik & Analiz Dashboard",
+                            style = MaterialTheme.typography.titleMedium.copy(
+                                fontWeight = FontWeight.Bold,
+                                color = TextPrimary
+                            )
                         )
-                    )
+                    }
                 },
                 navigationIcon = {
-                    IconButton(onClick = onNavigateBack) {
-                        Icon(
+                    Box(modifier = Modifier.padding(start = 8.dp)) {
+                        StyledIconTile(
                             imageVector = Icons.Default.ArrowBack,
                             contentDescription = "Geri",
-                            tint = TextPrimary
+                            size = 36.dp,
+                            shapeRadius = 10.dp,
+                            accentColor = TextPrimary,
+                            onClick = onNavigateBack
                         )
                     }
                 },

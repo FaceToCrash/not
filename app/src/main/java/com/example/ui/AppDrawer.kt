@@ -57,6 +57,9 @@ import com.example.ui.theme.TextMuted
 import com.example.ui.theme.TextPrimary
 import com.example.ui.theme.TextSecondary
 
+import com.example.ui.components.StyledIconTile
+import com.example.ui.components.StyledUserIconBadge
+
 enum class ActiveScreen {
     CHAT,
     ALL_NOTES,
@@ -85,39 +88,26 @@ fun AppDrawerContent(
                 .padding(16.dp)
                 .verticalScroll(rememberScrollState())
         ) {
-            // Drawer Header
+            // Drawer Header with User Styled 3D Icon Badge
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(16.dp))
                     .background(
                         Brush.linearGradient(
-                            listOf(PrimaryPurple.copy(alpha = 0.3f), SecondaryCyan.copy(alpha = 0.2f))
+                            listOf(PrimaryPurple.copy(alpha = 0.35f), SecondaryCyan.copy(alpha = 0.2f))
                         )
                     )
                     .padding(16.dp)
             ) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Box(
-                        modifier = Modifier
-                            .size(48.dp)
-                            .clip(CircleShape)
-                            .background(DarkBackground),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Psychology,
-                            contentDescription = null,
-                            tint = PrimaryPurpleLight,
-                            modifier = Modifier.size(30.dp)
-                        )
-                    }
+                    StyledUserIconBadge(size = 48.dp, shapeRadius = 14.dp)
 
                     Spacer(modifier = Modifier.width(12.dp))
 
                     Column {
                         Text(
-                            text = "Akıllı Not",
+                            text = "Akıllı Not AI",
                             style = MaterialTheme.typography.titleMedium.copy(
                                 fontWeight = FontWeight.Bold,
                                 color = TextPrimary
@@ -253,10 +243,13 @@ private fun DrawerMenuItem(
             )
         },
         icon = {
-            Icon(
+            StyledIconTile(
                 imageVector = icon,
                 contentDescription = null,
-                tint = if (isSelected) SecondaryCyan else TextSecondary
+                size = 32.dp,
+                shapeRadius = 10.dp,
+                accentColor = if (isSelected) SecondaryCyan else TextSecondary,
+                containerColor = if (isSelected) DarkSurfaceVariant else Color.Transparent
             )
         },
         selected = isSelected,

@@ -101,6 +101,9 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
+import com.example.ui.components.StyledIconTile
+import com.example.ui.components.StyledUserIconBadge
+
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 fun ChatScreen(
@@ -157,20 +160,7 @@ fun ChatScreen(
             TopAppBar(
                 title = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Box(
-                            modifier = Modifier
-                                .size(36.dp)
-                                .clip(CircleShape)
-                                .background(PrimaryPurple.copy(alpha = 0.2f)),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.Psychology,
-                                contentDescription = null,
-                                tint = PrimaryPurpleLight,
-                                modifier = Modifier.size(22.dp)
-                            )
-                        }
+                        StyledUserIconBadge(size = 36.dp, shapeRadius = 10.dp)
                         Spacer(modifier = Modifier.width(10.dp))
                         Column {
                             Text(
@@ -198,32 +188,37 @@ fun ChatScreen(
                     }
                 },
                 navigationIcon = {
-                    IconButton(
-                        onClick = onOpenDrawer,
-                        modifier = Modifier.testTag("hamburger_menu_button")
-                    ) {
-                        Icon(
+                    Box(modifier = Modifier.padding(start = 8.dp)) {
+                        StyledIconTile(
                             imageVector = Icons.Default.Menu,
                             contentDescription = "Menü",
-                            tint = TextPrimary
+                            size = 36.dp,
+                            shapeRadius = 10.dp,
+                            accentColor = TextPrimary,
+                            onClick = onOpenDrawer,
+                            modifier = Modifier.testTag("hamburger_menu_button")
                         )
                     }
                 },
                 actions = {
-                    IconButton(onClick = onNavigateToDashboard) {
-                        Icon(
-                            imageVector = Icons.Default.AutoAwesome,
-                            contentDescription = "Dashboard",
-                            tint = SecondaryCyan
-                        )
-                    }
-                    IconButton(onClick = onNavigateToNotes) {
-                        Icon(
-                            imageVector = Icons.Default.Bookmark,
-                            contentDescription = "Notlar",
-                            tint = PrimaryPurpleLight
-                        )
-                    }
+                    StyledIconTile(
+                        imageVector = Icons.Default.AutoAwesome,
+                        contentDescription = "Dashboard",
+                        size = 34.dp,
+                        shapeRadius = 10.dp,
+                        accentColor = SecondaryCyan,
+                        onClick = onNavigateToDashboard,
+                        modifier = Modifier.padding(end = 4.dp)
+                    )
+                    StyledIconTile(
+                        imageVector = Icons.Default.Bookmark,
+                        contentDescription = "Notlar",
+                        size = 34.dp,
+                        shapeRadius = 10.dp,
+                        accentColor = PrimaryPurpleLight,
+                        onClick = onNavigateToNotes,
+                        modifier = Modifier.padding(end = 8.dp)
+                    )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = DarkSurface
@@ -514,20 +509,7 @@ private fun WelcomeSummaryCard(summaryText: String) {
             modifier = Modifier.padding(16.dp),
             verticalAlignment = Alignment.Top
         ) {
-            Box(
-                modifier = Modifier
-                    .size(36.dp)
-                    .clip(CircleShape)
-                    .background(PrimaryPurple.copy(alpha = 0.2f)),
-                contentAlignment = Alignment.Center
-            ) {
-                Icon(
-                    imageVector = Icons.Default.AutoAwesome,
-                    contentDescription = null,
-                    tint = SecondaryCyan,
-                    modifier = Modifier.size(20.dp)
-                )
-            }
+            StyledUserIconBadge(size = 38.dp, shapeRadius = 10.dp)
             Spacer(modifier = Modifier.width(12.dp))
             Column {
                 Text(
