@@ -1,22 +1,38 @@
 {
-  "short_name": "Akıllı Not",
+  "id": "com.aistudio.akillinot",
   "name": "Akıllı Not - AI Destekli Not Defteri",
-  "description": "AI destekli akıllı not defteri ve kişisel asistan",
+  "short_name": "Akıllı Not",
+  "description": "AI destekli akıllı not defteri, sesli not kaydı ve kişisel asistan uygulaması",
+  "lang": "tr",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "theme_color": "#0F172A",
+  "background_color": "#090D16",
+  "categories": ["productivity", "utilities"],
   "icons": [
     {
       "src": "icon-192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
       "src": "icon-512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#0F172A",
-  "background_color": "#090D16",
-  "orientation": "portrait"
+  "shortcuts": [
+    {
+      "name": "Yeni Not",
+      "short_name": "Not Ekle",
+      "description": "Hızlıca yeni bir not oluştur",
+      "url": "/?action=new_note"
+    }
+  ]
 }
