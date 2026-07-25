@@ -3,6 +3,19 @@
   "cleanUrls": true,
   "headers": [
     {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, OPTIONS"
+        }
+      ]
+    },
+    {
       "source": "/(.*)\\.png",
       "headers": [
         {
@@ -21,6 +34,19 @@
     },
     {
       "source": "/manifest.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/manifest+json"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/site.webmanifest",
       "headers": [
         {
           "key": "Content-Type",
